@@ -1,0 +1,10 @@
+local Players = game:GetService("Players")
+local userInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+userInputService.JumpRequest:Connect(function()
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+end)
